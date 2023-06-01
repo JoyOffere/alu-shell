@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -la /find . -name "*.html" -newer ../ -exec cp -u {} ../
+cp -u *.html . ..
