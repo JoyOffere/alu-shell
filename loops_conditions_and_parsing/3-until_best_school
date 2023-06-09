@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Write a Bash script that displays Best School 10 times.
+INCREMENT=0
+CHECK=10
+until [ $INCREMENT -ge $CHECK ];
+do
+	echo "Best School"
+	((INCREMENT++))
+done
