@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Groups log data according to status code
+awk '{print $1 " " $9}' apache-access.log | sort | uniq -c | sort -rn
