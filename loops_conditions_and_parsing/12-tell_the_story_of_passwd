@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#Write a Bash script that displays the content of the file /etc/passwd, using the while loop + IFS.
+
+START=1
+END=$(wc -l < /etc/passwd)
+true > story.txt
+while [ $START -le "$END" ];
+do
+	sed -n "1,2 s#USER ID INFO#$(head -n $START /etc/passwd | tail -n 1 | awk -F: '{print $5}')#;s#USER ID#$(head -n $START /etc/passwd | tail -n 1 | awk -F: '{print $3}')#;s#USERNAME#$(head -n $START /etc/passwd | tail -n 1 | awk -F: '{print $1}')#;s#PASSWORD#$(head -n $START /etc/passwd | tail -n 1 | awk -F: '{print $2}')#;s#GROUP_ID#$(head -n $START /etc/passwd | tail -n 1 | awk -F: '{print $4}')#;s#HOME_DIRECTORY#$(head -n $START /etc/passwd | tail -n 1 | awk -F: '{print $6}')#;s#COMMAND/SHELL#$(head -n $START /etc/passwd | tail -n 1 | awk -F: '{print $7}')#p" message.txt >> story.txt
+
+	((START++))
+done
+
+cat story.txt
