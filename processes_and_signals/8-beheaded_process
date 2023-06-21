@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# a script thet kills 7-hilanders
+pkill -f --signal SIGKILL 7-highlander

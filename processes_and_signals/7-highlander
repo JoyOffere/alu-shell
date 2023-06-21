@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#dealing with SIGTERM
+deal() {
+	echo "I am invincible!!!"
+}
+trap deal SIGTERM
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
+

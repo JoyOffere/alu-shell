@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#a script that kills task 4
+kill "$(pgrep -f '4-to_infinity_and_beyond')"
